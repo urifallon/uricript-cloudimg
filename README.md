@@ -197,7 +197,3 @@ Nếu private key có permission quá mở (ví dụ 664), `ssh/ssh-keygen` sẽ
 * Script cấp quyền `ubuntu` sudo NOPASSWD (phù hợp lab, không khuyến nghị production).
 * SSH password bị tắt (`ssh_pwauth: false`).
 * Root bị disable login (`disable_root: true`).
-
----
-
-Nếu bạn muốn, tôi có thể viết thêm README phụ cho workflow multi-NIC: “boot 1 NIC → attach 5 NIC → generate netplan trong guest theo output `ip -br link`” để dùng lặp lại cho nhiều node.
