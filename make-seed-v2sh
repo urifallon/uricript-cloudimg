@@ -91,11 +91,14 @@ EOF
 cat > "${WORKDIR}/network-config" <<EOF
 version: 2
 ethernets:
-  lan0:
+  bootstrap0:
     match: {macaddress: "${LAN_MAC}"}
-    set-name: lan0
+    set-name: bootstrap0
     dhcp4: true
     optional: true
+    dhcp4-overrides:
+      use-dns: true
+      use-routes: true
 
   mgmt0:
     match: {macaddress: "${MGMT_MAC}"}
@@ -129,7 +132,6 @@ ethernets:
     match: {macaddress: "${EXT_MAC}"}
     set-name: ext0
     dhcp4: false
-    addresses: [172.16.40.${NODE_ID}/24]
     optional: true
 EOF
 
